@@ -10,19 +10,19 @@ class CicloFormativo extends Model
         'name',
         'level',
         'description',
-        'profesionalfamily',
         'valuation',
-        'personalopnion',
-        'category_id',
+        'personalopinion',
+        'email_contact',
+        'ciclos_id',
         'user_id',
     ];
     public function user()
     {
         return $this->belongsTo(User::class);
     }	
-    public function category()
+    public function ciclo()
     {
-        return $this->belongsTo(Ciclo::class);
+        return $this->belongsTo(Ciclo::class, 'ciclos_id');
     }
     
 }

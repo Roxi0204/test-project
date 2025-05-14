@@ -10,8 +10,8 @@ class Ciclo extends Model
         'name',
     ];
 
-    public function announcements()
+    public function cicloFormativo()
     {
-        return $this->hasMany(  CicloFormativo::class);
+        return $this->hasMany(CicloFormativo::class);
     }
 }

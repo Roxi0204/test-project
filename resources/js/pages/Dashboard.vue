@@ -3,6 +3,7 @@ import AppLayout from '@/layouts/AppLayout.vue';
 import { type BreadcrumbItem } from '@/types';
 import { Head, Link } from '@inertiajs/vue3';
 import PlaceholderPattern from '../components/PlaceholderPattern.vue';
+import ModalPublicitario from '@/components/ModalPublicitario.vue';
 
 
 
@@ -16,7 +17,7 @@ const breadcrumbs: BreadcrumbItem[] = [
 
 <template>
     <Head title="Ciclos formativos" />
-
+    <ModalPublicitario />
     <AppLayout :breadcrumbs="breadcrumbs">
         <div class="bg-gradient-to-br from-blue-100 to-indigo-200 min-h-screen">
             <div class="py-16">

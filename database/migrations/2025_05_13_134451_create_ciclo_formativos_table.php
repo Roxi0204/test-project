@@ -16,12 +16,12 @@ return new class extends Migration
             $table->string('name')->nullable();
             $table->string('level')->nullable();
             $table->string('description')->nullable();
-            $table->string('profesionalfamily')->nullable();
             $table->string('valuation')->nullable();
             $table->string('personalopinion')->nullable();
+            $table->string('email_contact')->nullable();
             $table->timestamps();
-            $table->foreignId('user_id')->constrained()->onDelete('cascade');
-            $table->foreignId('ciclos_id')->constrained()->onDelete('cascade');
+            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
+            $table->foreignId('ciclos_id')->constrained('ciclos')->onDelete('cascade');
         });
     }
 

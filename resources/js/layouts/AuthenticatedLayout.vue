@@ -1,12 +1,12 @@
 <script setup>
 import { ref } from 'vue';
-import ApplicationLogo from '@/Components/ApplicationLogo.vue';
-import Dropdown from '@/Components/Dropdown.vue';
-import DropdownLink from '@/Components/DropdownLink.vue';
-import NavLink from '@/Components/NavLink.vue';
-import ResponsiveNavLink from '@/Components/ResponsiveNavLink.vue';
+import ApplicationLogo from '@/components/ApplicationLogo.vue';
+import Dropdown from '@/components/Dropdown.vue';
+import DropdownLink from '@/components/DropdownLink.vue';
+import NavLink from '@/components/NavLink.vue';
+import ResponsiveNavLink from '@/components/ResponsiveNavLink.vue';
 import { Link } from '@inertiajs/vue3';
-import CookieBanner from '@/Components/CookieBanner.vue';
+import CookieBanner from '@/components/CookieBanner.vue';
 
 const showingNavigationDropdown = ref(false);
 </script>
@@ -19,11 +19,10 @@ const showingNavigationDropdown = ref(false);
                 role="navigation"
                 aria-label="Main Navigation"
             >
-                <!-- Primary Navigation Menu -->
                 <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                     <div class="flex h-16 justify-between items-center flex-wrap">
                         <div class="flex items-center">
-                            <!-- Logo -->
+                          
                             <div class="flex shrink-0 items-center">
                                 <Link :href="route('dashboard')" aria-label="Go to Dashboard">
                                     <ApplicationLogo
@@ -32,23 +31,23 @@ const showingNavigationDropdown = ref(false);
                                 </Link>
                             </div>
 
-                            <!-- Navigation Links -->
+                            
                             <div
                                 class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex"
                                 role="menu"
                                 aria-label="Primary Navigation Links"
                             >
                                 <NavLink
-                                    :href="route('announcements.index')"
+                                    :href="route('cicloformativos.index')"
                                     :active="route().current('dashboard')"
                                 >
-                                    Anuncios
+                                    Ciclos formativos
                                 </NavLink>
                             </div>
                         </div>
 
                         <div class="hidden sm:ms-6 sm:flex sm:items-center">
-                            <!-- Settings Dropdown -->
+                         
                             <div class="relative ms-3">
                                 <Dropdown align="right" width="48">
                                     <template #trigger>
@@ -97,7 +96,7 @@ const showingNavigationDropdown = ref(false);
                             </div>
                         </div>
 
-                        <!-- Hamburger -->
+                    
                         <div class="-me-2 flex items-center sm:hidden">
                             <button
                                 @click="
@@ -142,7 +141,7 @@ const showingNavigationDropdown = ref(false);
                     </div>
                 </div>
 
-                <!-- Responsive Navigation Menu -->
+            
                 <div
                     :class="{
                         block: showingNavigationDropdown,
@@ -158,14 +157,14 @@ const showingNavigationDropdown = ref(false);
                             Dashboard
                         </ResponsiveNavLink>
                         <ResponsiveNavLink
-                            :href="route('announcements.index')"
-                            :active="route().current('announcements.index')"
+                            :href="route('cicloformativos.index')"
+                            :active="route().current('cicloformativos.index')"
                         >
-                            Anuncios
+                            Ciclos formativos
                         </ResponsiveNavLink>
                     </div>
 
-                    <!-- Responsive Settings Options -->
+                   
                     <div
                         class="border-t border-gray-200 pb-1 pt-4"
                     >
@@ -196,7 +195,7 @@ const showingNavigationDropdown = ref(false);
                 </div>
             </nav>
 
-            <!-- Page Heading -->
+           
             <header
                 class="bg-white shadow"
                 v-if="$slots.header"
@@ -206,7 +205,7 @@ const showingNavigationDropdown = ref(false);
                 </div>
             </header>
 
-            <!-- Page Content -->
+        
             <main>
                 <slot />
             </main>

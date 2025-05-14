@@ -11,10 +11,14 @@ use Inertia\Inertia;
 
 use Illuminate\Foundation\Application;
 
-
 Route::get('/', function () {
-    return Inertia::render('Welcome');
-})->name('home');
+    return Inertia::render('Welcome', [
+        'canLogin' => Route::has('login'),
+        'canRegister' => Route::has('register'),
+        'laravelVersion' => Application::VERSION,
+        'phpVersion' => PHP_VERSION,
+    ]);
+});
 
 Route::get('dashboard', function () {
     return Inertia::render('Dashboard');
@@ -27,7 +31,7 @@ Route::get('/cicloformativos/edit/{id}',[CicloFormativoController::class,'edit']
 Route::post('/cicloformativos/edit/{id}',[CicloFormativoController::class,'update'])->name('cicloformativos.update');
 Route::post('/cicloformativos/delete/{id}',[CicloFormativoController::class,'destroy'])->name('cicloformativos.destroy');
 Route::get('/cicloformativos/{id}',[CicloFormativoController::class,'show'])->name('cicloformativos.show');
-Route::post('/cicloformativos/category',[CicloFormativoController::class,'getByCategory'])->name('cicloformativos.by.category');
+Route::post('/cicloformativos/ciclo',[CicloFormativoController::class,'getByCicle'])->name('cicloformativos.by.category');
 
 
 require __DIR__.'/settings.php';
